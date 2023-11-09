@@ -624,9 +624,9 @@ def main():
     else:
          return_pairs = av_pairs
 
-    config = configparser.SafeConfigParser()
+    config = configparser.ConfigParser()
     try:
-        config.readfp(open(filename))
+        config.readfile(filename)
     except (IOError, configparser.ParsingError):
         log.critical("Can't open/parse config file: '%s'" % (filename))
         sys.exit(1)
